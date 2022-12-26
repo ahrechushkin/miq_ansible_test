@@ -1,0 +1,8 @@
+- hosts: ovirt_engine
+  vars:
+    location: "{{ location_code | default(inventory_file | dirname | basename) }}"
+
+  tasks:
+  - name: Say hello
+    shell: >
+      echo "Hello {{ ovn_lb_name }}"
